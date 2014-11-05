@@ -1,0 +1,11 @@
+name = Taxonomy Accordion
+description = Provides a block that lists Taxonomy hierarchy in a javascript accordion.
+core = 7.x
+dependencies[] = taxonomy
+
+; Information added by drupal.org packaging script on 2013-10-19
+version = "7.x-1.0"
+core = "7.x"
+project = "taxonomy_accordion"
+datestamp = "1382163462"
+
