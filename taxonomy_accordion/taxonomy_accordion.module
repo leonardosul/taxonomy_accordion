@@ -65,7 +65,7 @@ function taxonomy_accordion_block_view($delta = '') {
       'term_children' => $term_children));
 
     // Create the selector for each accordion item to be sent to js.
-    $selector = '#taxonomy_accordion_' . $tax_vocabulary . ' h3:contains("' . $term->name . '")';
+    $selector = '#taxonomy_accordion_' . $tax_vocabulary . ' h3:containsExact("' . $term->name . '")';
     // Add selctors to an array.
     $selector_list[] = $selector;
   }

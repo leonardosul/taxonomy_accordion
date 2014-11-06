@@ -11,6 +11,12 @@
 (function($) {
   Drupal.behaviors.taxonomy_accordion = {
     attach: function (context, settings) {
+
+      // Set up an extension to match text exactly.
+      $.expr[":"].containsExact = function (obj, index, meta, stack) {
+        return (obj.textContent || obj.innerText || $(obj).text() || "") == meta[3];
+      };
+
       $.each(settings.taxonomy_accordion.selector_list, function() {
         var taxSelector = this.toString();
         var cookieId = taxSelector.match(/\(([^)]+)\)/)[1];
@@ -18,6 +24,8 @@
 
         var cookieName = 'accordionState_' + cookieId;
         var status = $.cookie(cookieName);
+
+        //$(taxSelector).accordion();
 
         $(taxSelector).accordion();
 
